@@ -30,7 +30,7 @@ if(OSTINSTALLED!=TRUE){
 }
 
 # Encrypt/Decrypt secret key - randomly generated during installation.
-define('SECRET_SALT','1i8DOYvUopb8daAzzJdoCMcN7785Zka8');
+define('SECRET_SALT','LbIWWjvc8mDWMONOSDX9c6OiIERdvcGl');
 
 #Default admin email. Used only on db connection issues and related alerts.
 define('ADMIN_EMAIL','jesteen@uabmc.edu');
@@ -42,7 +42,7 @@ define('ADMIN_EMAIL','jesteen@uabmc.edu');
 define('DBTYPE','mysql');
 #  DBHOST can have comma separated hosts (e.g db1:6033,db2:6033)
 define('DBHOST','localhost');
-define('DBNAME','osticketdev');
+define('DBNAME','osticket');
 define('DBUSER','serviceadmin');
 define('DBPASS','ObGyn777-UAB');
 
