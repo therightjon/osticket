@@ -328,7 +328,7 @@ class UserNav {
 
             $navs = array();
             $user = $this->user;
-            $navs['home']=array('desc'=>__('OBGYN Helpdesk Home'),'href'=>'index.php','title'=>'');
+            $navs['home']=array('desc'=>__('Helpdesk Home'),'href'=>'index.php','title'=>'');
             if($cfg && $cfg->isKnowledgebaseEnabled())
                 $navs['kb']=array('desc'=>__('Knowledgebase'),'href'=>'kb/index.php','title'=>'');
 
