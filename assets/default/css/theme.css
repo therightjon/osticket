@@ -122,7 +122,7 @@ a:hover, .link:hover {
     cursor: pointer;
 }
 h1 {
-  color: #00AEEF;
+  color: #808285;
   font-weight: normal;
   font-size: 20px;
 }
@@ -274,17 +274,20 @@ h2, .subject {
 .button:visited,
 .green.button,
 .green.button:visited {
-  background-color: #91bd09;
+  color: #144B39;
+  background-color: #88C408;
 }
 .green.button:hover {
-  background-color: #749a02;
+  background-color: #88C408;
 }
+/* YELLOW BUTTON */
 .blue.button,
 .blue.button:visited {
-  background-color: #00AEEF;
+  color: #144B39;
+  background-color: #FFD602;
 }
 .blue.button:hover {
-  background-color: #0299d2;
+  background-color: #FFD602;
 }
 body {
   background: #144B39;
