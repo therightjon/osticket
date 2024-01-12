@@ -274,7 +274,7 @@ h2, .subject {
 .button:visited,
 .green.button,
 .green.button:visited {
-  color: #144B39;
+  color: #000000;
   background-color: #88C408;
 }
 .green.button:hover {
@@ -283,7 +283,7 @@ h2, .subject {
 /* YELLOW BUTTON */
 .blue.button,
 .blue.button:visited {
-  color: #144B39;
+  color: #000000;
   background-color: #FFD602;
 }
 .blue.button:hover {
