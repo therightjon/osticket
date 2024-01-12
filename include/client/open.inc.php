@@ -98,11 +98,14 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
         if($_POST && $errors && !$errors['captcha'])
             $errors['captcha']=__('Please re-enter the text again');
         ?>
-    <tr class="captchaRow">
-        <td class="required"><?php echo __('CAPTCHA Text');?>:</td>
-        <td>
+        
+    <tr class="captchaRow"> <!-- // Added line breaks to fix Captcha alignment -->
+        <td class="required">
+            <br />
+            <?php echo __('CAPTCHA Text');?>:
+            <br />
             <span class="captcha"><img src="captcha.php" border="0" align="left"></span>
-            &nbsp;&nbsp;
+            <br /><br />
             <input id="captcha" type="text" name="captcha" size="6" autocomplete="off">
             <em><?php echo __('Enter the text shown on the image.');?></em>
             <font class="error">*&nbsp;<?php echo $errors['captcha']; ?></font>
