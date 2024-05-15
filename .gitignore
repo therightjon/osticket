@@ -3,3 +3,4 @@ include/ost-config.php
 .DS_Store
 Attachments/
 include/ost-config.php
+include/ost-config-bkp.php
