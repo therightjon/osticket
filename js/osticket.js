@@ -3,6 +3,9 @@
    Copyright (c) osTicket.com
  */
 
+// Import DOMPurify
+const DOMPurify = require('dompurify');
+
 $(document).ready(function(){
 
     $('input:not(.dp):visible:enabled:input[value=""]:first').focus();
@@ -186,11 +189,16 @@ $.sysAlert = function (title, msg, cb) {
     var $dialog =  $('.dialog#alert');
     if ($dialog.length) {
         $('#title', $dialog).html(title);
+        // Sanitize the message using DOMPurify
+        msg = DOMPurify.sanitize(msg, { ALLOWED_TAGS: ['br'], ALLOWED_ATTR: [] });
         $('#body', $dialog).html(msg);
         $dialog.show();
     } else {
-        msg = msg.replace(/<br\s*\/?>/, "\n").replace(/<\/?\w+[^>]*>/g, '');
-        alert(title+':\n'+msg);
+        // Sanitize the message using DOMPurify
+        msg = DOMPurify.sanitize(msg, { ALLOWED_TAGS: ['br'], ALLOWED_ATTR: [] });
+        // Replace <br> tags with newlines
+        msg = msg.replace(/<br\s*\/?>/g, "\n").replace(/<\/?\w+[^>]*>/g, '');
+        alert(title + ':\n' + msg);
     }
 };
 
