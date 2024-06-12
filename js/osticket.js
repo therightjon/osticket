@@ -190,14 +190,16 @@ $.sysAlert = function (title, msg, cb) {
     if ($dialog.length) {
         $('#title', $dialog).html(title);
         // Sanitize the message using DOMPurify
-        msg = DOMPurify.sanitize(msg, { ALLOWED_TAGS: ['br'], ALLOWED_ATTR: [] });
+        msg = DOMPurify.sanitize(msg);
+        // Replace <br> tags with newlines
+        msg = msg.replace(/<br\s*\/?>/g, "\n");
         $('#body', $dialog).html(msg);
         $dialog.show();
     } else {
         // Sanitize the message using DOMPurify
-        msg = DOMPurify.sanitize(msg, { ALLOWED_TAGS: ['br'], ALLOWED_ATTR: [] });
+        msg = DOMPurify.sanitize(msg);
         // Replace <br> tags with newlines
-        msg = msg.replace(/<br\s*\/?>/g, "\n").replace(/<\/?\w+[^>]*>/g, '');
+        msg = msg.replace(/<br\s*\/?>/g, "\n");
         alert(title + ':\n' + msg);
     }
 };
