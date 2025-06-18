@@ -946,6 +946,7 @@ class Format {
         'a' => 'tt',
         'HH' => 'H',
         'H' => 'HH',
+        'i' => 'mm',
         );
 
         return str_replace(array_keys($codes), array_values($codes), $format);
