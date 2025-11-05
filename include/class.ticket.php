@@ -3401,7 +3401,7 @@ implements RestrictedAccess, Threadable, Searchable {
         $signature = $from_name = '';
         if ($thisstaff && $vars['signature']=='mine')
             $signature=$thisstaff->getSignature();
-        elseif ($vars['signature']=='dept' && $dept && $dept->isPublic())
+        elseif ($vars['signature']=='dept' && $dept->isPublic())
             $signature=$dept->getSignature();
 
         if ($thisstaff && ($type=$thisstaff->getReplyFromNameType())) {
@@ -3867,10 +3867,6 @@ implements RestrictedAccess, Threadable, Searchable {
 
                if (!$errors && !$this->save())
                    $errors['field'] =  __('Unable to update field');
-            // Convert duedate back to user timezone for display
-            if ($fid == 'duedate' && $this->duedate) {
-                $this->duedate = Format::datetime($this->duedate);
-            }
            }
        }
 
